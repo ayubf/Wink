@@ -12,7 +12,6 @@ function ProfilePage() {
     let [usrData, setUsrData] = useState({
         user : {
             username: "",
-            views: "",
             date: Date.now()
         },
         posts: []
@@ -36,7 +35,6 @@ function ProfilePage() {
     }, [])
 
 
-    console.log(usrData.posts);
     
     if (cookies.get('authed')) {
         return (
@@ -51,12 +49,10 @@ function ProfilePage() {
                        <Card.Subtitle>
                            Date Joined: {usrData.user.date}
                        </Card.Subtitle>
-                       <Card.Subtitle>
-                           Views: {usrData.user.views}
-                       </Card.Subtitle>
                     </Card.Body>
                 </Card>
-                <Card>
+                <div>
+                    <h3>Posts:</h3>
                     {usrData.posts.map(({ postTitle, postBody }) => {
                         return (
                             <>
@@ -71,7 +67,7 @@ function ProfilePage() {
                             </>
                         )
                     })}
-                </Card>
+                </div>
                 <Footer />
             </div>
         )

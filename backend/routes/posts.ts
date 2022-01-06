@@ -4,7 +4,6 @@ import Post from '../models/Post';
 const router = express.Router();
 
 router.post('/createpost', async (req, res) => {
-    console.log(req.body.postTitle)
     if (!(await Post.exists({postTitle: req.body.postTitle}))) {
         const newPost = await Post.create({
           postTitle: req.body.postTitle,
@@ -21,11 +20,7 @@ router.post('/createpost', async (req, res) => {
 router.get('/', async (req, res) => {
   const posts = await Post.find().exec();
   return res.send(posts);  
-})
+})  
 
-router.get('/:postTitle', async (req, res) => {
-  const post = await Post.findOne({postTitleURL: req.params.postTitle}).exec();
-  return res.send(post);  
-})
 
 export default router

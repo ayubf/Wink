@@ -22,6 +22,7 @@ function PostArea() {
         }
 
         loadPosts()
+
     }, [])
 
 
@@ -32,9 +33,9 @@ function PostArea() {
                     postData.map(({postTitle, user, postBody}) => {
                         return (
                             <>
-                                <Card>
+                                <Card key="{postTitle}">
                                     <Card.Title>
-                                        <a href={`http://localhost:3000/user/${user}`}>{user}</a>
+                                        <p>{user}</p>
                                     </Card.Title>
                                     <Card.Subtitle>
                                         {postTitle}

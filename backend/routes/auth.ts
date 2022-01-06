@@ -10,7 +10,6 @@ router.post('/signup', async (req, res) => {
         const newUser = await User.create({
           username: req.body.username,
           password: await bcrypt.hash(req.body.password, 10),
-          votes: 0,
       })
       return res.sendStatus(201);
     } else {
@@ -25,7 +24,6 @@ router.post('/signup', async (req, res) => {
 router.post('/login', async (req, res) => {
   const user = await User.findOne({username: req.body.username}).exec()
   if (user && (await bcrypt.compare(req.body.password, user.password))) {
-      req.session.username = req.body.username;
       return res.sendStatus(200);
   } else {
     return res.sendStatus(401);
@@ -34,11 +32,6 @@ router.post('/login', async (req, res) => {
 
 
 router.delete("/signup", async (req, res) => {
-    // Conditions
-    // 1. User must exist
-    // 2. Passwords must match
-    // 3. Password must match db's hashed copy
-
     if (await User.exists({username: req.body.username})) {
       const user = await User.findOne({username: req.body.username})
       if (await bcrypt.compare(req.body.password, user.password) && req.body.password == req.body.confirmPassword) {
@@ -78,9 +71,7 @@ router.put("/signup", async (req, res) => {
 
 
 
-
-
 export default router
 
 
-/// ADD A 404 PAGE LMAO
+

@@ -6,7 +6,6 @@ import 'dotenv/config';
 import mainRouter from './routes/main';
 import postRouter from './routes/posts';
 import authRouter from './routes/auth';
-import usersRouter from './routes/users';
 
 // Express Object
 const server = express();
@@ -68,7 +67,6 @@ mongoose.connect(
 server.use('/', mainRouter);
 server.use('/', authRouter);
 server.use('/posts', postRouter);
-server.use('/users', usersRouter);
 
 
 

@@ -6,7 +6,6 @@ const PostTemplate = new mongoose.Schema<IPost>({
     user: {type: String, required: true},
     postBody: {type: String, required: true},
     date: {type: Date, default: Date.now},
-    views: {type: Number, default: 0}   
 });
 
 interface IPost extends Document {
@@ -15,7 +14,6 @@ interface IPost extends Document {
     user: String,
     postBody: String,
     date: Number,
-    views: Number
 }
 
 

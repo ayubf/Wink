@@ -14,11 +14,7 @@ import PostForm from './components/PostForm';
 import ProfilePage from './components/ProfilePage';
 
 
-
-
 function App() {
-
-
   return (
     <div className="App">
       <Router>
@@ -28,12 +24,7 @@ function App() {
           <Route path='/' element={<HomePage />} />
           <Route path="/settings" element={<SettingsPage />}/>
           <Route path="/profile" element={<ProfilePage />}/>
-          <Route path="/posts/createpost" element={<PostForm />}/>
-          {/*Add
-            1. Settings Route
-            2. users/[username] route
-            3. post[title] route
-          */}
+          <Route path="/createpost" element={<PostForm />}/>
         </Routes>
       </Router>
     </div>

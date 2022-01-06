@@ -49,7 +49,7 @@ function UpdateUserForm() {
                     <Form onSubmit={handleUpdateUser}>
                         <Form.Group>
                             <Form.Label>
-                                Username
+                                New Username
                             </Form.Label>
                             <Form.Control autoComplete="off" type="text" value={username} onChange={(e: React.ChangeEvent<any>) => {setUsername(e.target.value)}} />
                         </Form.Group>

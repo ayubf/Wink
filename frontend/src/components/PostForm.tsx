@@ -32,7 +32,6 @@ function PostForm() {
         }).then((res) => {
             if (res.status === 200) {
                 navigate('/', {replace: true})
-                // navigate(`/post/${postData.postTitle.toLowerCase().replace(" ", "-")}`, {replace: true})
             }
         })
     }
