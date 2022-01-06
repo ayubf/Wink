@@ -1,0 +1,44 @@
+/*Works*/
+
+/*Set body as Open Sans*/
+
+@import url('fonts.css');
+
+body {
+    font-family: "OpenSans-Regular";
+    max-width: 1000px;
+    margin:0 auto; 
+}
+
+div {
+    padding: 7.5px;  
+}
+
+form {
+    padding: 3px;
+}
+
+.footerDiv {
+    font-family: "UbuntuMono-Regular";
+    text-align: center;
+}
+
+.title {
+    font-size: 75px;
+}
+
+.loginForm, .signUpForm {
+    max-width: 1000px;
+    margin:0 auto; 
+    width: 500px;
+}
+
+.logsigTitle {
+    text-align: center;
+    font-size: 75px;
+}
+
+.loginFormForm {
+    padding: 20px;
+}
+
